@@ -2,8 +2,8 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('series', {
-      id_serie: {
+    await queryInterface.createTable('peliculas', {
+      id_pelicula: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
@@ -12,12 +12,17 @@ module.exports = {
       titulo: {
         type: Sequelize.STRING
       },
-      proximo: {
-        type: Sequelize.BOOLEAN
-
+      genero: {
+        type: Sequelize.STRING
+      },
+      director: {
+        type: Sequelize.STRING
       },
       valoracion: {
-        type: Sequelize.DECIMAL
+        type: Sequelize.INTEGER
+      },
+      cine: {
+        type: Sequelize.BOOLEAN
       },
       precio: {
         type: Sequelize.DECIMAL
@@ -26,6 +31,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('series');
+    await queryInterface.dropTable('peliculas');
   }
 };
