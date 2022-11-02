@@ -1,28 +1,40 @@
-const { DataTypes, Model } = require('sequelize')
-const sequelize = require('../db/db')
+'use strict';
+const {
+  Model
+} = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class usuarios2 extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      // define association here
+    }
+  }
+  usuarios2.init({
+    id_usuario: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: Sequelize.INTEGER
+    },
+  
+    nombre: DataTypes.STRING,
+    apellidos: DataTypes.STRING,
+    edad: DataTypes.INTEGER,
+    email:{
+      type: DataTypes.STRING,
+      primaryKey: true,
+      allowNull: false,
+      require: true,
+      unique: true,
+      validate: {
+        isEmail: true,
+        len: [1, 100]
+      },
 
-class Usuario extends Model { }
-
-Usuario.init({
-  id_usuario: {
-    allowNull: false,
-    autoIncrement: true,
-    primaryKey: true,
-    type: Sequelize.INTEGER
-  },
-
-  nombre: DataTypes.STRING,
-  apellidos: DataTypes.STRING,
-  edad: DataTypes.INTEGER,
-  email: {
-    type: DataTypes.STRING,
-    primaryKey: true,
-    allowNull: false,
-    require: true,
-    unique: true,
-    validate: {
-      isEmail: true,
-      len: [1, 100]
     },
     contrasena: {
       type: DataTypes.STRING,
@@ -35,14 +47,10 @@ Usuario.init({
     pais: DataTypes.STRING,
     telefono: DataTypes.INTEGER,
 
-  },
-
-  sequelize,
-  modelName: "usuarios",
-  //FreezeTableName nos conserva el nombre en vez de ponerlo en plural
-  freezeTableName: true,
-  //Evita que sequelize nos genere los campos createdAt y modifiedAt en la tabla
-  timestamps: false
-})
-
-module.exports = Usuario
+  }, 
+  {
+    sequelize,
+    modelName: 'usuarios2',
+  });
+  return usuarios2;
+};

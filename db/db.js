@@ -1,5 +1,7 @@
 const config = require('../config/config.json')
-const { Sequelize } = require('sequelize')
+const Sequelize = require('sequelize')
+
+require ('dotenv').config()
 
 const sequelize = new Sequelize(
   config.development.database,

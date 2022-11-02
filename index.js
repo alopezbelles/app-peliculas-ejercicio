@@ -1,4 +1,4 @@
-const { appendFile } = require("fs");
+// const { appendFile } = require("fs");
 const express = require("express");
 const app = express();
 const db = require('./db/db')
