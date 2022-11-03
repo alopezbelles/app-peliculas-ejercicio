@@ -1,13 +1,11 @@
 const express = require('express')
 const router = express.Router()
 
-const UserRoutes = require('./views/UserRoutes')
-const ProfileRoutes = require('./views/ProfileRoutes')
+const usuariosRoutes = require('./views/usuariosRoutes')
 
 
 //middleware para las rutas de usuario
-router.use('/user', UserRoutes)
-router.use('/profile', ProfileRoutes)
+router.use('/usuarios', usuariosRoutes)
 
 
 module.exports = router

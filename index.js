@@ -1,20 +1,21 @@
-// const { appendFile } = require("fs");
 const express = require("express");
 const app = express();
+
 const db = require('./db/db')
-// const router = require('./router')
+
+const router = require('./router')
+const models = require('./models/index')
 
 const PORT = 3000;
 
 app.use(express.json());
+app.use(router);
+// app.use(models);
 
 
 
 
 
-// app.listen(PORT, () => {
-//     Console.log(`Servidor conectado en puerto ${PORT}`);
-// })
 
 app.listen(PORT, () => {     
     console.log(`Servidor conectado en el puerto  ${PORT}`);     
