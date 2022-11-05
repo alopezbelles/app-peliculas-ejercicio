@@ -11,16 +11,19 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      articulos.belongsTo(models.peliculas, { foreignKey: 'id_pelicula' })
-      articulos.belongsTo(models.series, { foreignKey: 'id_serie' })
+      articulos.hasMany(models.series)
+      articulos.hasMany(models.peliculas)
 
-      articulos.belongsToMany(models.alquileres, { through: 'alquileresarticulos'})
+      articulos.belongsToMany(models.alquileres, {through: 'alquileresarticulos'})
 
     }
   }
   articulos.init({
     id_articulos: DataTypes.INTEGER
-  }, {
+  }, 
+  
+  
+  {
     sequelize,
     modelName: 'articulos',
   });

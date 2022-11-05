@@ -11,8 +11,11 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      alquileres.belongsToMany(models.articulos, { through: 'alquileresarticulos'})
-      alquileres.belongsTo(models.usuarios, { foreignKey: 'id_usuario' })
+      alquileres.belongsTo(models.usuarios, {foreignKey: 'id_usuario'})
+
+      alquileres.belongsToMany(models.articulos, {through: 'alquileresarticulos'})
+
+      
 
     }
   }
@@ -20,7 +23,25 @@ module.exports = (sequelize, DataTypes) => {
     id_alquileres: DataTypes.INTEGER,
     fechaalquiler: DataTypes.DATE,
     fechadevolucion: DataTypes.DATE,
-  }, {
+
+    id_articulos: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'articulos',
+        key: 'id_articulos'
+      },
+    },
+    id_usuario: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'usuarios',
+        key: 'id_usuario'
+      },
+    }
+  }, 
+  
+  
+  {
     sequelize,
     modelName: 'alquileres',
   });

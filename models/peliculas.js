@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      peliculas.hasMany(models.articulos)
+      peliculas.belongsTo(models.articulos, { foreignKey: 'id_articulo'})
     }
   }
   peliculas.init({
@@ -26,7 +26,17 @@ module.exports = (sequelize, DataTypes) => {
     director: DataTypes.STRING,
     valoracion: DataTypes.INTEGER,
     cine: DataTypes.BOOLEAN,
-  }, {
+    id_articulos: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'articulos',
+        key: 'id_articulos'
+      },
+    }
+  }, 
+  
+  
+  {
     sequelize,
     modelName: 'peliculas',
   });

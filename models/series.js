@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      series.hasMany(models.articulos)
+      series.belongsTo(models.articulos, { foreignKey: 'id_articulo'})
 
     }
   }
@@ -25,7 +25,17 @@ module.exports = (sequelize, DataTypes) => {
     titulo: DataTypes.STRING,
     proximo: DataTypes.BOOLEAN,
     valoracion: DataTypes.INTEGER,
-  }, {
+    id_articulos: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'articulos',
+        key: 'id_articulos'
+      },
+    }
+  }, 
+  
+  
+  {
     sequelize,
     modelName: 'series',
   });
