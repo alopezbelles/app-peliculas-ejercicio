@@ -24,9 +24,7 @@ module.exports = {
       cine: {
         type: Sequelize.BOOLEAN
       },
-      precio: {
-        type: Sequelize.DECIMAL
-      },
+    
       
     });
   },

@@ -2,23 +2,28 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('roles', {
-      id_rol: {
+    await queryInterface.createTable('series', {
+      id_serie: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      usuario: {
+      titulo: {
+        type: Sequelize.STRING
+      },
+      proximo: {
+        type: Sequelize.BOOLEAN
+
+      },
+      valoracion: {
+        type: Sequelize.DECIMAL
+      },
       
-      type: Sequelize.ENUM('usuario','admin','super-admin'),
-      defaultValue: 'usuario',
-
-
-    }
+      
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('roles');
+    await queryInterface.dropTable('series');
   }
 };

@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      peliculas.hasMany(models.articulos)
     }
   }
   peliculas.init({
@@ -25,7 +26,6 @@ module.exports = (sequelize, DataTypes) => {
     director: DataTypes.STRING,
     valoracion: DataTypes.INTEGER,
     cine: DataTypes.BOOLEAN,
-    precio: DataTypes.DECIMAL
   }, {
     sequelize,
     modelName: 'peliculas',
