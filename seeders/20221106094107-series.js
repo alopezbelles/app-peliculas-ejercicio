@@ -4,7 +4,7 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
 
-    await queryInterface.bulkInsert('People', [
+    await queryInterface.bulkInsert('series', [
 
       {
         titulo: "Aquí no hay quien viva",
@@ -99,7 +99,7 @@ module.exports = {
       {
         titulo: "Padre de Familia",
         proximo: true,
-        valoracion: 5,
+        valoracion: 3,
 
       },
       {
