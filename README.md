@@ -64,10 +64,11 @@ La base de datos consta de 7 tablas: SERIES, PELÍCULAS, ARTÍCULOS, ALQUILERES,
 ### Endpoints
 
 PELÍCULAS
-GET /peliculas --> Mostrará el listado con todas las películas.
-GET /peliculas/id/:id --> Mostrará una película buscando por su Id.
-GET /peliculas/titulo/:titulo --> Mostrará una película buscando por su título.
-GET /peliculas/genero/:genero --> Mostrará una película buscando por su genero.
+- GET /peliculas --> Mostrará el listado con todas las películas.
+- GET /peliculas/id/:id --> Mostrará una película buscando por su Id.
+- GET /peliculas/titulo/:titulo --> Mostrará una película buscando por su título.
+- GET /peliculas/genero/:genero --> Mostrará una película buscando por su genero.
 
 
+🔧 ***El proyecto sigue en desarrollo......¡Disculpad las molestias!***  🔧
 
