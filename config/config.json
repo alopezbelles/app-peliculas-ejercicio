@@ -1,11 +1,11 @@
 {
   "development": {
     "username": "root",
-    "password": "root",
+    "password": "DMgG7nClb0xB1N8u5pQq",
     "database": "api_alquileres",
-    "host": "127.0.0.1",
+    "host": "containers-us-west-113.railway.app",
     "dialect": "mysql",
-    "port": "33061"
+    "port": "5520"
     
   },
   "test": {
