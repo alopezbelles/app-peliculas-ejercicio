@@ -1,11 +1,17 @@
 //IMPORTAMOS BASE DE DATOS
 const db = require("../models/peliculas");
 const peliculas = db.peliculas;
-// const Op = db.Sequelize.Op; //IMPORTAMOS FUNCIONES ORM DE SEQUELIZE
 
-const PeliculasController = {}
+//IMPORTAMOS FUNCIONES ORM DE SEQUELIZE
+const Op = db.Sequelize.Op; 
 
-//OBTENEMOS LISTADO DE TODAS LAS PELÍCULAS
+//OBJETO CONTROLADOR
+const PeliculasController = {} 
+
+
+/////  C R U D    E N D - P O I N T S  F U N C T I O N S //////
+
+//OBTENEMOS LISTADO DE TODAS LAS PELÍCULAS//
 PeliculasController.getAll = (req, res) => {
 
     peliculas.findAll()
@@ -15,13 +21,13 @@ PeliculasController.getAll = (req, res) => {
       .catch(err => {
         res.status(500).send({
           message:
-            err.message || "Ha surgido algún error al intentar acceder a las películas."
+            err.message || "Ha surgido un error al intentar acceder a las películas."
         });
       });
   };
 
 
-//OBTENEMOS PELICULA POR ID
+//OBTENEMOS PELICULA POR ID//
 PeliculasController.getById = (req, res) => {
   const id = req.params.id;
 
@@ -37,12 +43,12 @@ PeliculasController.getById = (req, res) => {
     })
     .catch(err => {
       res.status(500).send({
-        message: "Ha surgido algún error al intentar acceder a la película con el id " + id + "."
+        message: "Ha surgido un error al intentar acceder a la película con el id " + id + "."
       });
     });
 };
 
-//OBTENEMOS PELICULA POR TITULO
+//OBTENEMOS PELICULA POR TITULO//
 PeliculasController.getByTitulo = (req, res) => {
 
   let titulo = req.params.titulo;
@@ -54,7 +60,7 @@ PeliculasController.getByTitulo = (req, res) => {
     .catch(err => {
       res.status(500).send({
         message:
-          err.message || "Ha surgido algún error al intentar acceder a las películas."
+          err.message || "Ha surgido un error al intentar acceder a las películas."
       });
     });
 };
@@ -62,7 +68,7 @@ PeliculasController.getByTitulo = (req, res) => {
 //OBTENEMOS PELICULA POR GENERO
 PeliculasController.getByGenero = (req, res) => {
 
-  let titulo = req.params.genero;
+  let genero = req.params.genero;
   
   peliculas.findAll( {where: {genero: genero}})
     .then(data => {
@@ -71,7 +77,25 @@ PeliculasController.getByGenero = (req, res) => {
     .catch(err => {
       res.status(500).send({
         message:
-          err.message || "Ha surgido algún error al intentar acceder a las películas."
+          err.message || "Ha surgido un error al intentar acceder a las películas."
+      });
+    });
+};
+
+
+//OBTENEMOS PELICULA POR PASE EN CINES
+PeliculasController.getByCines = (req, res) => {
+
+  let cines = req.params.cines;
+  
+  peliculas.findAll( {where: {cines: true}})
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Ha surgido un error al intentar acceder a las películas."
       });
     });
 };

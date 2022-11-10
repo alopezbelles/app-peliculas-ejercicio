@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       articulos.hasMany(models.series)
       articulos.hasMany(models.peliculas)
 
-      articulos.belongsToMany(models.alquileres, {through: 'alquileresarticulos'})
+      // articulos.belongsToMany(models.alquileres, {through: 'alquileresarticulos'})  //poner la tabla intermedia en migraciones
 
     }
   }

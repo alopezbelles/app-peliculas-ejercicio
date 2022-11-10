@@ -1,14 +1,14 @@
-// const express = require('express')
+const router = express.Router()
 
+//Importamos Routes definidas en views
 
 const PeliculasRouter = require("./views/peliculasRouter");
 
 
 
-//middleware para las rutas de usuario
 
-
-router.use("peliculas", PeliculasRouter);
+// End-points CRUD películas
+router.use('/peliculas', PeliculasRouter);
 
 
 module.exports = router

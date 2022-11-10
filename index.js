@@ -10,23 +10,28 @@ const models = require('./models/index')
 
 const PORT = 3000;
 
+//Middlewares
 app.use(express.json());
+app.use(router);
 
-// app.use(router);
-
-// app.use(models);
-
+app.get('/', (req, res) => {res.send('Pantalla de inicio');});
 
 
 
 
+//Esto no lo he tocado
 
-app.listen(PORT, () => {     
-    console.log(`Servidor conectado en el puerto  ${PORT}`);     
-    db.authenticate().then(()=> {         
-        console.log("Conectado a la base de datos");     
-    }).catch(error => {         
-        console.log('No se ha conectado a la base de datos' + error)     
-    })
+// app.listen(PORT, () => {     
+//     console.log(`Servidor conectado en el puerto  ${PORT}`);     
+//     db.authenticate().then(()=> {         
+//         console.log("Conectado a la base de datos");     
+//     }).catch(error => {         
+//         console.log('No se ha conectado a la base de datos' + error)     
+//     })
     
-});
+// });
+
+db.then(()=>{
+    app.listen(PORT, ()=> console.log(`Server on port ${PORT}`)); //ARRANCO SERVIDOR
+})
+.catch((err)=> console.log(err.message)); 

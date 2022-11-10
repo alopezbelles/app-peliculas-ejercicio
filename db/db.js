@@ -1,5 +1,6 @@
 const config = require('../config/config.json')
 const Sequelize = require('sequelize')
+// const { Sequelize } = require('sequelize')
 
 
 require ('dotenv').config()
@@ -15,4 +16,16 @@ const sequelize = new Sequelize(
   }
 )
 
-module.exports = sequelize
+// module.exports = sequelize
+
+// module.exports = sequelize.authenticate()
+// .then((db)=>{
+//     console.log('MYSQL connected'); 
+//     return db;
+// });
+
+module.exports = sequelize.authenticate()
+.then((db)=>{
+    console.log('MYSQL connected'); 
+    return db;
+});

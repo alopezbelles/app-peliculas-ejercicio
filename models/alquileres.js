@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       alquileres.belongsTo(models.usuarios, {foreignKey: 'id_usuario'})
 
-      alquileres.belongsToMany(models.articulos, {through: 'alquileresarticulos'})
+      // alquileres.belongsToMany(models.articulos, {through: 'alquileresarticulos'}) //poner la tabla intermedia en migraciones
 
       
 

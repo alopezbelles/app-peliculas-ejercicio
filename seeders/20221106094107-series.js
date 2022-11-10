@@ -73,14 +73,14 @@ module.exports = {
 
       },
       {
-        titulo: "Dinosaurios",
-        proximo: false,
+        titulo: "El señor de los anillos",
+        proximo: true,
         valoracion: 4,
 
       },
       {
-        titulo: "Malcom in the middle",
-        proximo: false,
+        titulo: "West World",
+        proximo: true,
         valoracion: 5,
 
       },

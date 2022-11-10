@@ -10,12 +10,8 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       usuario: {
-      
-      type: Sequelize.ENUM('usuario','admin','super-admin'),
-      defaultValue: 'usuario',
-      
-
-    }
+        type: Sequelize.STRING
+      }
     });
   },
   async down(queryInterface, Sequelize) {
