@@ -12,7 +12,7 @@ const PeliculasController = {}
 /////  C R U D    E N D - P O I N T S  F U N C T I O N S //////
 
 //OBTENEMOS LISTADO DE TODAS LAS PELÍCULAS//
-PeliculasController.getAll = (req, res) => {
+PeliculasController.getPeliculasAll = (req, res) => {
 
     peliculas.findAll()
       .then(data => {
@@ -28,7 +28,7 @@ PeliculasController.getAll = (req, res) => {
 
 
 //OBTENEMOS PELICULA POR ID//
-PeliculasController.getById = (req, res) => {
+PeliculasController.getPeliculasById = (req, res) => {
   const id = req.params.id;
 
   peliculas.findByPk(id)
@@ -49,7 +49,7 @@ PeliculasController.getById = (req, res) => {
 };
 
 //OBTENEMOS PELICULA POR TITULO//
-PeliculasController.getByTitulo = (req, res) => {
+PeliculasController.getPeliculasByTitulo = (req, res) => {
 
   let titulo = req.params.titulo;
   
@@ -66,7 +66,7 @@ PeliculasController.getByTitulo = (req, res) => {
 };
 
 //OBTENEMOS PELICULA POR GENERO
-PeliculasController.getByGenero = (req, res) => {
+PeliculasController.getPeliculasByGenero = (req, res) => {
 
   let genero = req.params.genero;
   
@@ -82,13 +82,12 @@ PeliculasController.getByGenero = (req, res) => {
     });
 };
 
+//OBTENEMOS PELICULAS TOP RATED
+PeliculasController.getPeliculasTopRated = (req, res) => {
 
-//OBTENEMOS PELICULA POR PASE EN CINES
-PeliculasController.getByCines = (req, res) => {
 
-  let cines = req.params.cines;
   
-  peliculas.findAll( {where: {cines: true}})
+  peliculas.findAll( {where: {valoracion: {[Op.gt]: 4}}})
     .then(data => {
       res.send(data);
     })
@@ -99,6 +98,7 @@ PeliculasController.getByCines = (req, res) => {
       });
     });
 };
+
 
 
 

@@ -3,23 +3,24 @@ const router = require("express").Router();
 
 const app = express();
 
-const db = require('./db/db')
+const db = require('./db/db.js')
 
 // const router = require('./router')
-const models = require('./models/index')
+// const models = require('./models/index')
 
-const PORT = 3000;
+const PORT = 3610;
 
 //Middlewares
 app.use(express.json());
 app.use(router);
+
 
 app.get('/', (req, res) => {res.send('Pantalla de inicio');});
 
 
 
 
-//Esto no lo he tocado
+//Esto no lo he tocado, pero puedo borrarlo
 
 // app.listen(PORT, () => {     
 //     console.log(`Servidor conectado en el puerto  ${PORT}`);     
