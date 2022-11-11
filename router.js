@@ -1,4 +1,6 @@
+const express = require('express') //esto es nuevo
 const router = express.Router()
+
 
 //Importamos Routes definidas en views
 

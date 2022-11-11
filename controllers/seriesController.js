@@ -1,4 +1,5 @@
 //IMPORTAMOS BASE DE DATOS
+const models = require ('../models/index')
 const db = require("../models/series");
 const series = db.series;
 
