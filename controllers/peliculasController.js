@@ -1,7 +1,5 @@
 const PeliculasController = {};
 
-// const res = require('express/lib/response');
-
 const models = require("../models/peliculas");
 
 //IMPORTAMOS FUNCIONES ORM DE SEQUELIZE
@@ -17,7 +15,7 @@ const models = require("../models/peliculas");
 PeliculasController.getPeliculasAll = async (req, res) => {
   try {
     let resp = await models.peliculas.findAll({
-      where: { type: "Película" },
+      
     });
     res.send(resp);
   } catch (err) {
@@ -95,6 +93,22 @@ PeliculasController.getPeliculasTopRated = async (req, res) => {
   }
 };
 
+//OBTENEMOS PELICULAS EN CINES ACTUALMENTE -------------------------------------------------------------------------
+
+PeliculasController.getPeliculasEnCine = async (req, res) => {
+  try {
+    const id = req.params.id;
+    let resp = await models.series.findAll({
+      
+      where: { cine: true},
+      })
+      .then((resp) => {
+        res.send(resp);
+      });
+  } catch (err) {
+    res.send(err);
+  }
+};
 
 
 module.exports = PeliculasController;

@@ -11,6 +11,7 @@ router.get("/series",SeriesController.getSeriesAll);
 router.get("/id/:id",SeriesController.getSeriesById);
 router.get("/titulo/:titulo", SeriesController.getSeriesByTitulo);
 router.get("/toprated", SeriesController.getSeriesTopRated);
+router.get("/proximoepisodio", SeriesController.getSeriesProximoEpisodio);
 
 
 module.exports = router;

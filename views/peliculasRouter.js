@@ -1,9 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-// const peliculas = require ('../models/peliculas')
-
-
 //Importamos modelo de datos
 const PeliculasController = require("../controllers/peliculasController");
 
@@ -15,6 +12,7 @@ router.get("/id/:id",PeliculasController.getPeliculasById);
 router.get("/titulo/:titulo", PeliculasController.getPeliculasByTitulo);
 router.get("/genero/:genero", PeliculasController.getPeliculasByGenero);
 router.get("/toprated", PeliculasController.getPeliculasTopRated);
+router.get("/cine", PeliculasController.getPeliculasEnCine);
 
 
 module.exports = router;

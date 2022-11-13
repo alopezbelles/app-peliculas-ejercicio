@@ -1,85 +1,97 @@
-//IMPORTAMOS BASE DE DATOS
-const models = require ('../models/index')
-const db = require("../models/series");
-const series = db.series;
+const SeriesController = {};
+
+const models = require("../models/series");
 
 //IMPORTAMOS FUNCIONES ORM DE SEQUELIZE
-const Op = db.Sequelize.Op; 
+// const Op = db.Sequelize.Op;
+// const { Op } = require("sequelize");  //esto es para cuando use la opcion OP top rated
 
 //OBJETO CONTROLADOR
-const SeriesController = {} 
 
 /////  C R U D    E N D - P O I N T S  F U N C T I O N S //////
 
-//OBTENEMOS LISTADO DE TODAS LAS SERIES//
-SeriesController.getSeriesAll = (req, res) => {
+//OBTENEMOS LISTADO DE TODAS LAS SERIES  -------------------------------------------------
 
-    series.findAll()
-      .then(data => {
-        res.send(data);
-      })
-      .catch(err => {
-        res.status(500).send({
-          message:
-            err.message || "Ha surgido un error al intentar acceder a las series."
-        });
-      });
-  };
+SeriesController.getSeriesAll = async (req, res) => {
+  try {
+    let resp = await models.series.findAll({
+      where: { type: "Serie" },
+    });
+    res.send(resp);
+  } catch (err) {
+    res.send(err);
+  }
+};
 
+//OBTENEMOS SERIE POR ID ---------------------------------------------------------------
 
-  //OBTENEMOS SERIE POR ID//
-  SeriesController.getSeriesById = (req, res) => {
+SeriesController.getSeriesById = async (req, res) => {
+  try {
     const id = req.params.id;
-  
-    series.findByPk(id)
-      .then(data => {
-        if (data) {
-          res.send(data);
-        } else {
-          res.status(404).send({
-            message: `No existe la serie con el id ${id}.`
-          });
-        }
+    let resp = await models.series.findAll({
+      
+        where: { id_serie: id },
       })
-      .catch(err => {
-        res.status(500).send({
-          message: "Ha surgido un error al intentar acceder a la serie con el id " + id + "."
-        });
+      .then((resp) => {
+        res.send(resp);
       });
-  };
+  } catch (err) {
+    res.send(err);
+  }
+};
 
-  //OBTENEMOS PELICULA POR TITULO//
-    SeriesController.getSeriesByTitulo = (req, res) => {
+//OBTENEMOS SERIE POR TITULO -----------------------------------------------------------
 
-    let titulo = req.params.titulo;
-    
-    series.findAll( {where: {titulo: titulo}})
-      .then(data => {
-        res.send(data);
+SeriesController.getSeriesByTitulo = async (req, res) => {
+  try {
+    const id = req.params.id;
+    let resp = await models.series.findAll({
+      
+        where: { titulo: titulo },
       })
-      .catch(err => {
-        res.status(500).send({
-          message:
-            err.message || "Ha surgido un error al intentar acceder a las series."
-        });
+      .then((resp) => {
+        res.send(resp);
       });
-  };
+  } catch (err) {
+    res.send(err);
+  }
+};
 
 
-//OBTENEMOS SERIES TOP RATED
-SeriesController.getSeriesTopRated = (req, res) => {
+//OBTENEMOS SERIES TOP RATED-------------------------------------------------------------------------
 
-    series.findAll( {where: {valoracion: {[Op.gt]: 4}}})
-      .then(data => {
-        res.send(data);
+SeriesController.getSeriesTopRated = async (req, res) => {
+  try {
+    const id = req.params.id;
+    let resp = await models.series.findAll({
+      
+      where: {valoracion: {[Op.gt]: 4}},
       })
-      .catch(err => {
-        res.status(500).send({
-          message:
-            err.message || "Ha surgido un error al intentar acceder a las series."
-        });
+      .then((resp) => {
+        res.send(resp);
       });
-  };
+  } catch (err) {
+    res.send(err);
+  }
+};
+
+//OBTENEMOS SERIES POR ESTRENO DE PRÓXIMO EPISODIO -------------------------------------------------------------------------
+
+SeriesController.getSeriesTopRated = async (req, res) => {
+  try {
+    const id = req.params.id;
+    let resp = await models.series.findAll({
+      
+      where: { proximo: true},
+      })
+      .then((resp) => {
+        res.send(resp);
+      });
+  } catch (err) {
+    res.send(err);
+  }
+};
 
 
-  module.exports = SeriesController
+
+module.exports = SeriesController;
