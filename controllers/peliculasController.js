@@ -3,10 +3,8 @@ const PeliculasController = {};
 const models = require("../models/peliculas");
 
 //IMPORTAMOS FUNCIONES ORM DE SEQUELIZE
-// const Op = db.Sequelize.Op;
-// const { Op } = require("sequelize");  //esto es para cuando use la opcion OP top rated
+const { Op } = require("sequelize");  
 
-//OBJETO CONTROLADOR
 
 /////  C R U D    E N D - P O I N T S  F U N C T I O N S //////
 

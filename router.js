@@ -4,13 +4,15 @@ const router = express.Router()
 
 //Importamos Routes definidas en views
 
-const PeliculasRouter = require("./views/peliculasRouter");
+const PeliculasRouter = require("./views/peliculasRoutes");
+const SeriesRouter = require("./views/seriesRoutes")
 
 
 
 
 // End-points CRUD películas
 router.use('/peliculas', PeliculasRouter);
+router.use('/series', SeriesRouter);
 
 
 module.exports = router

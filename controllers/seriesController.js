@@ -3,10 +3,9 @@ const SeriesController = {};
 const models = require("../models/series");
 
 //IMPORTAMOS FUNCIONES ORM DE SEQUELIZE
-// const Op = db.Sequelize.Op;
-// const { Op } = require("sequelize");  //esto es para cuando use la opcion OP top rated
+const { Op } = require("sequelize"); 
 
-//OBJETO CONTROLADOR
+
 
 /////  C R U D    E N D - P O I N T S  F U N C T I O N S //////
 
@@ -15,7 +14,7 @@ const models = require("../models/series");
 SeriesController.getSeriesAll = async (req, res) => {
   try {
     let resp = await models.series.findAll({
-      where: { type: "Serie" },
+     
     });
     res.send(resp);
   } catch (err) {
@@ -77,7 +76,7 @@ SeriesController.getSeriesTopRated = async (req, res) => {
 
 //OBTENEMOS SERIES POR ESTRENO DE PRÓXIMO EPISODIO -------------------------------------------------------------------------
 
-SeriesController.getSeriesTopRated = async (req, res) => {
+SeriesController.getSeriesProximoEpisodio = async (req, res) => {
   try {
     const id = req.params.id;
     let resp = await models.series.findAll({
