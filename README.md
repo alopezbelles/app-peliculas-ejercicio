@@ -56,9 +56,9 @@ Crear registros:
 ### Tablas y relaciones
 
 
-![relaciones alex](https://user-images.githubusercontent.com/113507322/200190222-67681f6a-3e13-463b-882b-e1935af0d703.png)
+![relaciones api alquileres alejandro](https://user-images.githubusercontent.com/113507322/201548439-c041e31d-3ac8-4bbb-98a9-588b4d46e127.png)
 
-La base de datos consta de 7 tablas: SERIES, PELÍCULAS, ARTÍCULOS, ALQUILERES, ROLES y USUARIOS, y una tabla intermedia que une ARTÍCULOS y ALQUILERES.
+La base de datos consta de 6 tablas: SERIES, PELÍCULAS, ARTÍCULOS, ALQUILERES, ROLES y USUARIOS.
 
 
 ### Endpoints
@@ -68,6 +68,25 @@ PELÍCULAS
 - GET /peliculas/id/:id --> Mostrará una película buscando por su Id.
 - GET /peliculas/titulo/:titulo --> Mostrará una película buscando por su título.
 - GET /peliculas/genero/:genero --> Mostrará una película buscando por su genero.
+- GET /peliculas/toprated --> Mostrará las películas con mayor puntuación (una puntuación superior al 4 en una escala del 4 al 5).
+- GET /peliculas/cine --> Mostrará las películas que estén actualmente disponibles en cines.
+
+SERIES
+- GET /series --> Mostrará el listado con todas las series.
+- GET /series/id/:id --> Mostrará una serie buscando por su Id.
+- GET /series/titulo/:titulo --> Mostrará una serie buscando por su título.
+- GET /series/toprated --> Mostrará las series con mayor puntuación (una puntuación superior al 4 en una escala del 4 al 5).
+- GET /series/proximoepisodio --> Mostrará las series que vayan a emitir un próximo episodio próximamente.
+
+USUARIOS
+ARTÍCULOS
+
+
+
+
+### Estructura del proyecto
+
+
 
 
 🔧 ***El proyecto sigue en desarrollo......¡Disculpad las molestias!***  🔧
