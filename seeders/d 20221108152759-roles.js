@@ -9,18 +9,14 @@ module.exports = {
 
 
       {
-        id_rol: "1",
+        id_rol: 1,
         usuario: "usuario",      
       },
       {
-        id_rol: "2",
+        id_rol: 2,
         usuario: "administrador",      
       },
-      {
-        id_rol: "3",
-        usuario: "super-administrador",      
-      },
-
+      
     ], {});
 
   },

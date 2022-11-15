@@ -13,7 +13,7 @@ const { Op } = require("sequelize");
 PeliculasController.getPeliculasAll = async (req, res) => {
   try {
     let resp = await models.peliculas.findAll({
-      
+     
     });
     res.send(resp);
   } catch (err) {
@@ -78,7 +78,7 @@ PeliculasController.getPeliculasByGenero = async (req, res) => {
 
 PeliculasController.getPeliculasTopRated = async (req, res) => {
   try {
-    const id = req.params.id;
+    // const id = req.params.id;
     let resp = await models.peliculas.findAll({
       
       where: {valoracion: {[Op.gt]: 4}},

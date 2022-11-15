@@ -16,6 +16,9 @@ module.exports = {
       fechadevolucion: {
         type: Sequelize.DATE
       },
+      usuario: {
+        type: Sequelize.INTEGER
+      },
       
       id_articulos: {
         type: Sequelize.INTEGER,

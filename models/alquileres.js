@@ -23,6 +23,7 @@ module.exports = (sequelize, DataTypes) => {
     id_alquileres: DataTypes.INTEGER,
     fechaalquiler: DataTypes.DATE,
     fechadevolucion: DataTypes.DATE,
+    usuario: DataTypes.STRING,
 
     id_articulos: {
       type: DataTypes.INTEGER,

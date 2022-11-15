@@ -16,6 +16,7 @@ module.exports = {
           direccion: "C/Republica Argentina 71",
           pais: "España",
           telefono: 547896524,
+          id_rol: 2,
         },
 
         {
@@ -27,6 +28,7 @@ module.exports = {
           direccion: "C/Jorge Juan 45",
           pais: "Francia",
           telefono: 658974153,
+          id_rol: 1,
         },
 
         {
@@ -38,6 +40,7 @@ module.exports = {
           direccion: "C/Falsa 123",
           pais: "Alemania",
           telefono: 478126982,
+          id_rol: 1,
         },
 
         {
@@ -49,6 +52,7 @@ module.exports = {
           direccion: "C/Republica Argentina 71",
           pais: "España",
           telefono: 863054719,
+          id_rol: 1,
         },
 
         {
@@ -60,6 +64,7 @@ module.exports = {
           direccion: "C/Republica Argentina 71",
           pais: "Italia",
           telefono: 439852471,
+          id_rol: 1,
         },
 
         {
@@ -71,6 +76,7 @@ module.exports = {
           direccion: "C/Camins Catalans",
           pais: "Francia",
           telefono: 239874156,
+          id_rol: 1,
         },
 
         {
@@ -82,6 +88,7 @@ module.exports = {
           direccion: "C/Barrachina 77",
           pais: "España",
           telefono: 875412369,
+          id_rol: 1,
         },
 
         {
@@ -93,6 +100,7 @@ module.exports = {
           direccion: "C/Jacinto Benavente",
           pais: "España",
           telefono: 239874156,
+          id_rol: 1,
         },
 
         {
@@ -104,6 +112,7 @@ module.exports = {
           direccion: "Avda Austria",
           pais: "Austria",
           telefono: 856932001,
+          id_rol: 1,
         },
         
         

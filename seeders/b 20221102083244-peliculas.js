@@ -12,6 +12,7 @@ module.exports = {
         director: " Luc Besson",
         valoracion: 5,
         cine: false,
+        id_articulos: 1,
 
       },
 
@@ -22,6 +23,7 @@ module.exports = {
         director: "Frank Darabont",
         valoracion: 5,
         cine: false,
+        id_articulos: 2,
 
       },
 
@@ -31,6 +33,7 @@ module.exports = {
         director: "Richard Donner",
         valoracion: 4,
         cine: false,
+        id_articulos: 3,
 
       },
       
@@ -40,6 +43,7 @@ module.exports = {
         director: "Ron Clements",
         valoracion: 3,
         cine: false,
+        id_articulos: 4,
 
       },
       {
@@ -48,6 +52,7 @@ module.exports = {
         director: "Alex de la Iglesia",
         valoracion: 4,
         cine: true,
+        id_articulos: 5,
 
       },
       {
@@ -56,6 +61,7 @@ module.exports = {
         director: "Félix Viscarret",
         valoracion: 4,
         cine: true,
+        id_articulos: 6,
 
       },
       {
@@ -64,6 +70,7 @@ module.exports = {
         director: "Parker Finn",
         valoracion: 2,
         cine: true,
+        id_articulos: 7,
 
       },
       {
@@ -72,6 +79,7 @@ module.exports = {
         director: "Kimberly Peirice",
         valoracion: 4,
         cine: false,
+        id_articulos: 8,
 
       },
       {
@@ -80,6 +88,7 @@ module.exports = {
         director: "Alejandro Amenábar",
         valoracion: 5,
         cine: false,
+        id_articulos: 9,
 
       },
       {
@@ -88,6 +97,7 @@ module.exports = {
         director: "Tom Tykwer",
         valoracion: 5,
         cine: false,
+        id_articulos: 10,
 
       },
       {
@@ -96,6 +106,7 @@ module.exports = {
         director: "David O.Russell",
         valoracion: 2,
         cine: true,
+        id_articulos: 11,
 
       },
       {
@@ -104,6 +115,7 @@ module.exports = {
         director: "Alberto Rodriguez Libero",
         valoracion: 3,
         cine: true,
+        id_articulos: 12,
 
       },
       {
@@ -112,6 +124,7 @@ module.exports = {
         director: "Alejandro Amenábar",
         valoracion: 5,
         cine: false,
+        id_articulos: 13,
 
       },
       {
@@ -120,6 +133,7 @@ module.exports = {
         director: "Gore Virbinsky",
         valoracion: 3,
         cine: false,
+        id_articulos: 14,
 
       },
       {
@@ -128,6 +142,7 @@ module.exports = {
         director: "Peter Jackson",
         valoracion: 5,
         cine: false,
+        id_articulos: 15,
 
       },
       {
@@ -136,6 +151,7 @@ module.exports = {
         director: "Chris Colombus",
         valoracion: 4,
         cine: false,
+        id_articulos: 16,
 
       },
       {
@@ -144,6 +160,7 @@ module.exports = {
         director: "Tim Burton",
         valoracion: 5,
         cine: false,
+        id_articulos: 17,
 
       },
       {
@@ -152,6 +169,7 @@ module.exports = {
         director: "Jaume Collet",
         valoracion: 1,
         cine: true,
+        id_articulos: 18,
 
       },
       {
@@ -160,6 +178,7 @@ module.exports = {
         director: "Jacobo Martinez",
         valoracion: 2,
         cine: true,
+        id_articulos: 19,
 
       },
 
