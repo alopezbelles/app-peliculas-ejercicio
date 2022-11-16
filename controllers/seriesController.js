@@ -1,6 +1,6 @@
 const SeriesController = {};
 
-const models = require("../models/series");
+const models = require("../models/index");
 
 //IMPORTAMOS FUNCIONES ORM DE SEQUELIZE
 const { Op } = require("sequelize"); 

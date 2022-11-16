@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class articulos extends Model {
     /**
@@ -11,21 +9,28 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      articulos.hasMany(models.series)
-      articulos.hasMany(models.peliculas)
+      articulos.hasMany(models.series);
+      articulos.hasMany(models.peliculas);
+      articulos.hasMany(models.alquileres);
 
       // articulos.belongsToMany(models.alquileres, {through: 'alquileresarticulos'})  //poner la tabla intermedia en migraciones
-
     }
   }
-  articulos.init({
-    id_articulos: DataTypes.INTEGER
-  }, 
-  
-  
-  {
-    sequelize,
-    modelName: 'articulos',
-  });
+  articulos.init(
+    {
+      id_articulos: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+        allowNull: false,
+      },
+    },
+
+    {
+      sequelize,
+      modelName: "articulos",
+      timestamps: false,
+    }
+  );
   return articulos;
 };

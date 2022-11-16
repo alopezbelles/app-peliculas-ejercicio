@@ -22,12 +22,14 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       type: DataTypes.INTEGER
     },
-    usuario: DataTypes.STRING,
+    usuario: DataTypes.STRING
   }, 
   
   {
     sequelize,
     modelName: 'roles',
+    timestamps: false
+
   });
   return roles;
 };

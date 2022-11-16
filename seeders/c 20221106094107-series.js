@@ -10,133 +10,133 @@ module.exports = {
         titulo: "Aquí no hay quien viva",
         proximo: false,
         valoracion: 5,
-        id_articulos: 20,
+        articuloIdArticulos: 20,
 
       },
       {
         titulo: "7 vidas",
         proximo: false,
         valoracion: 4,
-        id_articulos: 21,
+        articuloIdArticulos: 21,
 
       },
       {
         titulo: "Juego de tronos: la casa del dragón",
         proximo: true,
         valoracion: 5,
-        id_articulos: 22,
+        articuloIdArticulos: 22,
 
       },
       {
         titulo: "El cuento de la criada",
         proximo: true,
         valoracion: 3,
-        id_articulos: 23,
+        articuloIdArticulos: 23,
 
       },
       {
         titulo: "Rick and Morty",
         proximo: true,
         valoracion: 4,
-        id_articulos: 24,
+        articuloIdArticulos: 24,
 
       },
       {
         titulo: "Otras galaxias",
         proximo: true,
         valoracion: 5,
-        id_articulos: 25,
+        articuloIdArticulos: 25,
 
       },
       {
         titulo: "Gargolas",
         proximo: false,
         valoracion: 5,
-        id_articulos: 26,
+        articuloIdArticulos: 26,
 
       },
       {
         titulo: "Marianne",
         proximo: false,
         valoracion: 3,
-        id_articulos: 27,
+        articuloIdArticulos: 27,
 
       },
       {
         titulo: "American Horror Story",
         proximo: true,
         valoracion: 4,
-        id_articulos: 28,
+        articuloIdArticulos: 28,
 
       },
       {
         titulo: "Dinosaurios",
         proximo: false,
         valoracion: 4,
-        id_articulos: 29,
+        articuloIdArticulos: 29,
 
       },
       {
         titulo: "Malcom in the middle",
         proximo: false,
         valoracion: 5,
-        id_articulos: 30,
+        articuloIdArticulos: 30,
 
       },
       {
         titulo: "El señor de los anillos",
         proximo: true,
         valoracion: 4,
-        id_articulos: 31,
+        articuloIdArticulos: 31,
 
       },
       {
         titulo: "West World",
         proximo: true,
         valoracion: 5,
-        id_articulos: 32,
+        articuloIdArticulos: 32,
 
       },
       {
         titulo: "Los Simpsons",
         proximo: true,
         valoracion: 5,
-        id_articulos: 33,
+        articuloIdArticulos: 33,
 
       },
       {
         titulo: "Futurama",
         proximo: false,
         valoracion: 5,
-        id_articulos: 34,
+        articuloIdArticulos: 34,
 
       },
       {
         titulo: "Padre de Familia",
         proximo: true,
         valoracion: 3,
-        id_articulos: 35,
+        articuloIdArticulos: 35,
 
       },
       {
         titulo: "Friends",
         proximo: false,
         valoracion: 5,
-        id_articulos: 36,
+        articuloIdArticulos: 36,
 
       },
       {
         titulo: "La banda del patio",
         proximo: false,
         valoracion: 3,
-        id_articulos: 37,
+        articuloIdArticulos: 37,
 
       },
       {
         titulo: "X-men",
         proximo: false,
         valoracion: 2,
-        id_articulos: 38,
+        articuloIdArticulos: 38,
 
       },
 

@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class alquileres extends Model {
     /**
@@ -11,40 +9,44 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      alquileres.belongsTo(models.usuarios, {foreignKey: 'id_usuario'})
+      alquileres.belongsTo(models.usuarios);
+      alquileres.belongsTo(models.articulos);
 
       // alquileres.belongsToMany(models.articulos, {through: 'alquileresarticulos'}) //poner la tabla intermedia en migraciones
-
-      
-
     }
   }
-  alquileres.init({
-    id_alquileres: DataTypes.INTEGER,
-    fechaalquiler: DataTypes.DATE,
-    fechadevolucion: DataTypes.DATE,
-    usuario: DataTypes.STRING,
+  alquileres.init(
+    {
+      id_alquileres: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        allowNull: false,
+        autoIncrement: true,
+      },
+      fechaalquiler: DataTypes.DATE,
+      fechadevolucion: DataTypes.DATE,
 
-    id_articulos: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'articulos',
-        key: 'id_articulos'
+      articuloIdArticulos: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: "articulos",
+          key: "id_articulos",
+        },
+      },
+      usuarioIdUsuario: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: "usuarios",
+          key: "id_usuario",
+        },
       },
     },
-    id_usuario: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'usuarios',
-        key: 'id_usuario'
-      },
+
+    {
+      sequelize,
+      modelName: "alquileres",
+      timestamps: false,
     }
-  }, 
-  
-  
-  {
-    sequelize,
-    modelName: 'alquileres',
-  });
+  );
   return alquileres;
 };

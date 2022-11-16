@@ -1,6 +1,6 @@
 const PeliculasController = {};
 
-const models = require("../models/peliculas");
+const models = require("../models/index");
 
 //IMPORTAMOS FUNCIONES ORM DE SEQUELIZE
 const { Op } = require("sequelize");  
