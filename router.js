@@ -10,9 +10,8 @@ const SeriesRouter = require("./views/seriesRoutes")
 
 
 
-// End-points CRUD películas
+// End-points CRUD películasº 
 router.use('/peliculas', PeliculasRouter);
 router.use('/series', SeriesRouter);
-
 
 module.exports = router

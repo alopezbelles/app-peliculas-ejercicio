@@ -20,14 +20,14 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       
-      id_articulos: {
+      articuloIdArticulos: {
         type: Sequelize.INTEGER,
         references: {
           model: 'articulos',
           key: 'id_articulos'
         },
       },
-      id_usuario: {
+      usuarioIdUsuario: {
         type: Sequelize.INTEGER,
         references: {
           model: 'usuarios',

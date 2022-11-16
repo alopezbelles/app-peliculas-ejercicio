@@ -42,9 +42,11 @@ PeliculasController.getPeliculasById = async (req, res) => {
 
 PeliculasController.getPeliculasByTitulo = async (req, res) => {
   try {
-    const id = req.params.id;
+    
+    let titulo = req.params.titulo;
     let resp = await models.peliculas.findAll({
       
+
         where: { titulo: titulo },
       })
       .then((resp) => {
@@ -60,14 +62,14 @@ PeliculasController.getPeliculasByTitulo = async (req, res) => {
 
 PeliculasController.getPeliculasByGenero = async (req, res) => {
   try {
-    const id = req.params.id;
-    let resp = await models.peliculas.findAll({
+    
+    let genero = req.params.genero;
+    let resp = await models.peliculas.findAll({     
       
-        where: { genero: genero },
+        where: { genero: genero } ,
       })
-      .then((resp) => {
         res.send(resp);
-      });
+    
   } catch (err) {
     res.send(err);
   }
@@ -95,10 +97,10 @@ PeliculasController.getPeliculasTopRated = async (req, res) => {
 
 PeliculasController.getPeliculasEnCine = async (req, res) => {
   try {
-    const id = req.params.id;
-    let resp = await models.series.findAll({
+
+    let resp = await models.peliculas.findAll({
       
-      where: { cine: true},
+      where: {cine: true},
       })
       .then((resp) => {
         res.send(resp);

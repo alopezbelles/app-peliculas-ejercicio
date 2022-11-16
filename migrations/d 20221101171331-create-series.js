@@ -20,7 +20,7 @@ module.exports = {
         type: Sequelize.DECIMAL
       },
       
-      id_articulos: {
+      articuloIdArticulos: {
         type: Sequelize.INTEGER,
         references: {
           model: 'articulos',

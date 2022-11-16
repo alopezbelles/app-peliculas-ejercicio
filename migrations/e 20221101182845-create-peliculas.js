@@ -25,7 +25,7 @@ module.exports = {
         type: Sequelize.BOOLEAN
       },
     
-      id_articulos: {
+      articuloIdArticulos: {
         type: Sequelize.INTEGER,
         references: {
           model: 'articulos',

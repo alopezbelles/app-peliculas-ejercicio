@@ -6,7 +6,6 @@ const models = require("../models/index");
 const { Op } = require("sequelize"); 
 
 
-
 /////  C R U D    E N D - P O I N T S  F U N C T I O N S //////
 
 //OBTENEMOS LISTADO DE TODAS LAS SERIES  -------------------------------------------------
@@ -43,7 +42,8 @@ SeriesController.getSeriesById = async (req, res) => {
 
 SeriesController.getSeriesByTitulo = async (req, res) => {
   try {
-    const id = req.params.id;
+    
+    let titulo = req.params.titulo;
     let resp = await models.series.findAll({
       
         where: { titulo: titulo },
@@ -78,7 +78,7 @@ SeriesController.getSeriesTopRated = async (req, res) => {
 
 SeriesController.getSeriesProximoEpisodio = async (req, res) => {
   try {
-    const id = req.params.id;
+    
     let resp = await models.series.findAll({
       
       where: { proximo: true},

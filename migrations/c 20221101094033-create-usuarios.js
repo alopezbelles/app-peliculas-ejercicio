@@ -34,7 +34,7 @@ module.exports = {
       telefono: {
         type: Sequelize.INTEGER
       },
-      id_rol: {
+      roleIdRol: {
         type: Sequelize.INTEGER,
         references: {
           model: 'roles',
