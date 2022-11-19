@@ -59,14 +59,13 @@ AlquileresController.actualizaAlquiler = async (req, res) => {
   try {
       let alquiler = req.body
       let resp = await models.alquileres.update(
-          {
-           
-            articuloIdArticulos: alquiler.articuloIdArticulos,
-            usuarioIdUsuario: alquiler.usuarioIdUsuario,
+          {           
+            fechaalquiler: alquiler.fechaalquiler,
+            fechadevolucion: alquiler.fechadevolucion,
                         
           },
           {
-            where: { usuarioIdUsuario: usuarioIdUsuario }
+            where: { id_alquileres: alquiler.id_alquileres }
           }
       )
 
