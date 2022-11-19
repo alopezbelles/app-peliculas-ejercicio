@@ -44,17 +44,17 @@ UsuariosController.getUsuariosById = async (req, res) => {
 
   UsuariosController.registroUsuario = async (req, res) => {
     try {
-        let usuarioDate = req.body
+        let usuario = req.body
         let resp = await models.usuarios.create({
-            nombre: usuarioDate.nombre,
-            apellidos: usuarioDate.apellidos,
-            edad: usuarioDate.edad,
-            email: usuarioDate.email,
-            contrasena: usuarioDate.contrasena,
-            direccion: usuarioDate.direccion,
-            pais: usuarioDate.pais,
-            telefono: usuarioDate.telefono,
-            roleIdRol: usuarioDate.roleIdRol
+            nombre: usuario.nombre,
+            apellidos: usuario.apellidos,
+            edad: usuario.edad,
+            email: usuario.email,
+            contrasena: usuario.contrasena,
+            direccion: usuario.direccion,
+            pais: usuario.pais,
+            telefono: usuario.telefono,
+            roleIdRol: usuario.roleIdRol
         })
 
         res.send(resp)
@@ -69,20 +69,17 @@ UsuariosController.getUsuariosById = async (req, res) => {
 
 UsuariosController.actualizaUsuario = async (req, res) => {
   try {
-      let usuarioDate = req.body
-      let resp = await User.update(
+      let usuario = req.body
+      let resp = await models.usuarios.update(
           {
-            nombre: usuarioDate.nombre,
-            apellidos: usuarioDate.apellidos,
-            email: usuarioDate.email,
-            contrasena: usuarioDate.contrasena,
-            direccion: usuarioDate.direccion,
-            pais: usuarioDate.pais,
-            telefono: usuarioDate.telefono,
-            
+            nombre: usuario.nombre,
+            apellidos: usuario.apellidos,
+            email: usuario.email,
+            contrasena: usuario.contrasena,
+                        
           },
           {
-              where: { mail: usuarioDate.mail }
+              where: { email: usuario.email }
           }
       )
 
@@ -92,9 +89,6 @@ UsuariosController.actualizaUsuario = async (req, res) => {
       res.send(err)
   }
 }
-
-
-
 
 
 //ELIMINAMOS UN USUARIO  ----------------------------------------------------------

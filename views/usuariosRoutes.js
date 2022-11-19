@@ -10,7 +10,7 @@ const UsuariosController = require("../controllers/usuariosController");
 router.get("/", UsuariosController.getUsuariosAll);
 router.get("/id/:id", UsuariosController.getUsuariosById);
 router.post("/registroUsuario", UsuariosController.registroUsuario);
-router.put("/actualizaUsuario", UsuariosController.registroUsuario);
+router.put("/actualizaUsuario", UsuariosController.actualizaUsuario);
 
 
 
