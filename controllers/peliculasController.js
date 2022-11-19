@@ -10,7 +10,7 @@ const { Op } = require("sequelize");
 
 //OBTENEMOS LISTADO DE TODAS LAS PELÍCULAS -------------------------------------------------
 
-PeliculasController.getPeliculasAll = async (req, res) => {
+PeliculasController.todasPeliculas = async (req, res) => {
   try {
     let resp = await models.peliculas.findAll({
      
@@ -23,7 +23,7 @@ PeliculasController.getPeliculasAll = async (req, res) => {
 
 //OBTENEMOS PELICULA POR ID ---------------------------------------------------------------
 
-PeliculasController.getPeliculasById = async (req, res) => {
+PeliculasController.peliculasPorId = async (req, res) => {
   try {
     const id = req.params.id;
     let resp = await models.peliculas.findAll({
@@ -40,7 +40,7 @@ PeliculasController.getPeliculasById = async (req, res) => {
 
 //OBTENEMOS PELICULA POR TITULO -----------------------------------------------------------
 
-PeliculasController.getPeliculasByTitulo = async (req, res) => {
+PeliculasController.peliculasPorTitulo = async (req, res) => {
   try {
     
     let titulo = req.params.titulo;
@@ -60,7 +60,7 @@ PeliculasController.getPeliculasByTitulo = async (req, res) => {
 
 //OBTENEMOS PELICULA POR GENERO -------------------------------------------------------------------
 
-PeliculasController.getPeliculasByGenero = async (req, res) => {
+PeliculasController.peliculasPorGenero = async (req, res) => {
   try {
     
     let genero = req.params.genero;
@@ -78,7 +78,7 @@ PeliculasController.getPeliculasByGenero = async (req, res) => {
 
 //OBTENEMOS PELICULAS TOP RATED-------------------------------------------------------------------------
 
-PeliculasController.getPeliculasTopRated = async (req, res) => {
+PeliculasController.peliculasTopRated = async (req, res) => {
   try {
     // const id = req.params.id;
     let resp = await models.peliculas.findAll({
@@ -95,7 +95,7 @@ PeliculasController.getPeliculasTopRated = async (req, res) => {
 
 //OBTENEMOS PELICULAS EN CINES ACTUALMENTE -------------------------------------------------------------------------
 
-PeliculasController.getPeliculasEnCine = async (req, res) => {
+PeliculasController.peliculasEnCine = async (req, res) => {
   try {
 
     let resp = await models.peliculas.findAll({

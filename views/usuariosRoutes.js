@@ -7,10 +7,11 @@ const UsuariosController = require("../controllers/usuariosController");
 
 ///// C R U D   U S U A R I O S /////
 
-router.get("/", UsuariosController.getUsuariosAll);
-router.get("/id/:id", UsuariosController.getUsuariosById);
+router.get("/", UsuariosController.todosUsuarios);
+router.get("/id/:id", UsuariosController.usuarioPorId);
 router.post("/registroUsuario", UsuariosController.registroUsuario);
-router.put("/actualizaUsuario", UsuariosController.actualizaUsuario);
+router.put("/actualizaUsuario/:email", UsuariosController.actualizaUsuario);
+router.delete("/eliminaUsuario/:id", UsuariosController.eliminaUsuario);
 
 
 

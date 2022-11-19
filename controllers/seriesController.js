@@ -10,7 +10,7 @@ const { Op } = require("sequelize");
 
 //OBTENEMOS LISTADO DE TODAS LAS SERIES  -------------------------------------------------
 
-SeriesController.getSeriesAll = async (req, res) => {
+SeriesController.todasSeries = async (req, res) => {
   try {
     let resp = await models.series.findAll({
      
@@ -23,7 +23,7 @@ SeriesController.getSeriesAll = async (req, res) => {
 
 //OBTENEMOS SERIE POR ID ---------------------------------------------------------------
 
-SeriesController.getSeriesById = async (req, res) => {
+SeriesController.seriesPorId = async (req, res) => {
   try {
     const id = req.params.id;
     let resp = await models.series.findAll({
@@ -40,7 +40,7 @@ SeriesController.getSeriesById = async (req, res) => {
 
 //OBTENEMOS SERIE POR TITULO -----------------------------------------------------------
 
-SeriesController.getSeriesByTitulo = async (req, res) => {
+SeriesController.seriesPorTitulo = async (req, res) => {
   try {
     
     let titulo = req.params.titulo;
@@ -59,7 +59,7 @@ SeriesController.getSeriesByTitulo = async (req, res) => {
 
 //OBTENEMOS SERIES TOP RATED-------------------------------------------------------------------------
 
-SeriesController.getSeriesTopRated = async (req, res) => {
+SeriesController.seriesTopRated = async (req, res) => {
   try {
     const id = req.params.id;
     let resp = await models.series.findAll({
@@ -76,7 +76,7 @@ SeriesController.getSeriesTopRated = async (req, res) => {
 
 //OBTENEMOS SERIES POR ESTRENO DE PRÓXIMO EPISODIO -------------------------------------------------------------------------
 
-SeriesController.getSeriesProximoEpisodio = async (req, res) => {
+SeriesController.seriesProximoEpisodio = async (req, res) => {
   try {
     
     let resp = await models.series.findAll({

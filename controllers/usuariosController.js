@@ -10,7 +10,7 @@ const { Op } = require("sequelize");
 
 //OBTENEMOS LISTADO DE TODOS LOS USUARIOS -------------------------------------------------
 
-UsuariosController.getUsuariosAll = async (req, res) => {
+UsuariosController.todosUsuarios = async (req, res) => {
     try {
       let resp = await models.usuarios.findAll({
        
@@ -24,9 +24,9 @@ UsuariosController.getUsuariosAll = async (req, res) => {
 
 //OBTENEMOS USUARIO POR ID ---------------------------------------------------------------
 
-UsuariosController.getUsuariosById = async (req, res) => {
+UsuariosController.usuarioPorId = async (req, res) => {
     try {
-      const id = req.params.id;
+      let id = req.params.id;
       let resp = await models.usuarios.findAll({
         
           where: { id_usuario: id },
@@ -40,7 +40,7 @@ UsuariosController.getUsuariosById = async (req, res) => {
   };
 
 
-  //CREAMOS UN NUEVO USUARIO ---------------------------------------------------------------
+  //CREAMOS UN NUEVO USUARIO -------------------------------------------------------------
 
   UsuariosController.registroUsuario = async (req, res) => {
     try {
@@ -94,7 +94,23 @@ UsuariosController.actualizaUsuario = async (req, res) => {
 //ELIMINAMOS UN USUARIO  ----------------------------------------------------------
 
 
+UsuariosController.eliminaUsuario = async (req, res) => {
+  try {
+      let id = req.params.id;
+      let resp = await models.usuarios.destroy({
+          where: { id_usuario: id }
+      })
 
+      if (resp == 1) {
+          res.send("Se ha eliminado el usuario")
+      } else {
+          res.send("No se ha podido eliminar el usuario")
+      }
+
+  } catch (err) {
+      res.send(err)
+  }
+}
 
 
 module.exports = UsuariosController;

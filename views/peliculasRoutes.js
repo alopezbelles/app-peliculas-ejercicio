@@ -7,12 +7,12 @@ const PeliculasController = require("../controllers/peliculasController");
 
 ///// C R U D   P E L I C U L A S /////
 
-router.get("/", PeliculasController.getPeliculasAll);
-router.get("/id/:id", PeliculasController.getPeliculasById);
-router.get("/titulo/:titulo", PeliculasController.getPeliculasByTitulo);
-router.get("/genero/:genero", PeliculasController.getPeliculasByGenero);
-router.get("/toprated", PeliculasController.getPeliculasTopRated);
-router.get("/cine", PeliculasController.getPeliculasEnCine);
+router.get("/", PeliculasController.todasPeliculas);
+router.get("/id/:id", PeliculasController.peliculasPorId);
+router.get("/titulo/:titulo", PeliculasController.peliculasPorTitulo);
+router.get("/genero/:genero", PeliculasController.peliculasPorGenero);
+router.get("/toprated", PeliculasController.peliculasTopRated);
+router.get("/cine", PeliculasController.peliculasEnCine);
 
 
 module.exports = router;
