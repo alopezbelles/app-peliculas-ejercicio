@@ -40,21 +40,21 @@ UsuariosController.getUsuariosById = async (req, res) => {
   };
 
 
-  //OBTENEMOS USUARIO POR ID ---------------------------------------------------------------
+  //CREAMOS UN NUEVO USUARIO ---------------------------------------------------------------
 
-  UsuariosController.registerUser = async (req, res) => {
+  UsuariosController.registroUsuario = async (req, res) => {
     try {
-        let data = req.body
+        let usuarioDate = req.body
         let resp = await models.usuarios.create({
-            nombre: data.nombre,
-            apellidos: data.apellidos,
-            edad: data.edad,
-            email: data.email,
-            contrasena: data.contrasena,
-            direccion: data.direccion,
-            pais: data.pais,
-            telefono: data.telefono,
-            roleIdRol: data.roleIdRole
+            nombre: usuarioDate.nombre,
+            apellidos: usuarioDate.apellidos,
+            edad: usuarioDate.edad,
+            email: usuarioDate.email,
+            contrasena: usuarioDate.contrasena,
+            direccion: usuarioDate.direccion,
+            pais: usuarioDate.pais,
+            telefono: usuarioDate.telefono,
+            roleIdRol: usuarioDate.roleIdRol
         })
 
         res.send(resp)
@@ -62,5 +62,45 @@ UsuariosController.getUsuariosById = async (req, res) => {
         res.send(err)
     }
 }
+
+
+
+//ACTUALIZAMOS LOS DATOS DE UN USUARIO  -------------------------------------------
+
+UsuariosController.actualizaUsuario = async (req, res) => {
+  try {
+      let usuarioDate = req.body
+      let resp = await User.update(
+          {
+            nombre: usuarioDate.nombre,
+            apellidos: usuarioDate.apellidos,
+            email: usuarioDate.email,
+            contrasena: usuarioDate.contrasena,
+            direccion: usuarioDate.direccion,
+            pais: usuarioDate.pais,
+            telefono: usuarioDate.telefono,
+            
+          },
+          {
+              where: { mail: usuarioDate.mail }
+          }
+      )
+
+      res.send(resp)
+
+  } catch (err) {
+      res.send(err)
+  }
+}
+
+
+
+
+
+//ELIMINAMOS UN USUARIO  ----------------------------------------------------------
+
+
+
+
 
 module.exports = UsuariosController;

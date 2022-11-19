@@ -14,10 +14,8 @@ app.get('/', (req, res) => {res.send('Pantalla de inicio');});
 
 //Conectamos con la base de datos
 db.then(()=>{
-    app.listen(PORT, ()=> console.log(`Server on port ${PORT}`)); 
-    // console.log(db)
-    db.authenticate()
-    .then("Conectado a la DB")//ARRANCO SERVIDOR
+    app.listen(PORT, ()=> console.log(`Servidor en puerto: ${PORT}`)); 
+   
 })
 .catch((err)=> console.log(err.message)); 
 
