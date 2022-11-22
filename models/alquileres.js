@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
       alquileres.belongsTo(models.usuarios);
       alquileres.belongsTo(models.articulos);
 
-      // alquileres.belongsToMany(models.articulos, {through: 'alquileresarticulos'}) //poner la tabla intermedia en migraciones
+      
     }
   }
   alquileres.init(

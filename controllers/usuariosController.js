@@ -1,4 +1,6 @@
 const UsuariosController = {};
+const jsonwebtoken = require("jsonwebtoken");
+const bcrypt = require('bcrypt');
 
 const models = require("../models/index");
 
@@ -40,28 +42,28 @@ UsuariosController.usuarioPorId = async (req, res) => {
   };
 
 
-  //CREAMOS UN NUEVO USUARIO -------------------------------------------------------------
+  //CREAMOS UN NUEVO USUARIO SIN TOKEN -------------------------------------------------------------
 
-  UsuariosController.registroUsuario = async (req, res) => {
-    try {
-        let usuario = req.body
-        let resp = await models.usuarios.create({
-            nombre: usuario.nombre,
-            apellidos: usuario.apellidos,
-            edad: usuario.edad,
-            email: usuario.email,
-            contrasena: usuario.contrasena,
-            direccion: usuario.direccion,
-            pais: usuario.pais,
-            telefono: usuario.telefono,
-            roleIdRol: usuario.roleIdRol
-        })
+//   UsuariosController.registroUsuario = async (req, res) => {
+//     try {
+//         let usuario = req.body
+//         let resp = await models.usuarios.create({
+//             nombre: usuario.nombre,
+//             apellidos: usuario.apellidos,
+//             edad: usuario.edad,
+//             email: usuario.email,
+//             contrasena: usuario.contrasena,
+//             direccion: usuario.direccion,
+//             pais: usuario.pais,
+//             telefono: usuario.telefono,
+//             roleIdRol: usuario.roleIdRol
+//         })
 
-        res.send(resp)
-    } catch (err) {
-        res.send(err)
-    }
-}
+//         res.send(resp)
+//     } catch (err) {
+//         res.send(err)
+//     }
+// }
 
 
 

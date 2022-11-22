@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       articulos.hasMany(models.peliculas);
       articulos.hasMany(models.alquileres);
 
-      // articulos.belongsToMany(models.alquileres, {through: 'alquileresarticulos'})  //poner la tabla intermedia en migraciones
+     
     }
   }
   articulos.init(
