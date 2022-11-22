@@ -48,8 +48,14 @@ AuthController.signUp = (req, res)=> {
         // Crear un usuario
         usuarios.create({
             nombre: req.body.nombre,
+            apellidos: req.body.apellidos,
+            edad: req.body.edad,            
             email: req.body.email,
-            contrasena: req.body.contrasena
+            contrasena: req.body.contrasena,
+            direccion: req.body.direccion,
+            pais: req.body.pais,
+            telefono: req.body.telefono,
+            roleIdRol: req.body.roleIdRol
         }).then(usuarios => {
 
             // Creamos el token
