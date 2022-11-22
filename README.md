@@ -73,7 +73,7 @@ Las relaciones entre las tablas deberían aparecer como en la imagen superior ad
 ### Endpoints
 
 Para poder ejetutar los endpoints se ejecuta la raiz:
-## **localhost:3654
+## **localhost:3655
 En caso de no poder conectarse al puerto 3654 declarado en el .env, se conectará al puerto 3610 declarado en el .index. 
 A continuación de esta ruta, se añaden los endpoints con las peticiones GET, POST, PUT y DELETE en el postman o algún servicio similar. 
 
