@@ -52,6 +52,7 @@ Crear registros:
 
 - [x] sequelize db:seed:all
 
+Con la base de datos ya creada y las tablas y los registros migrados, las relaciones entre las tablas quedarían de la siguiente manera: 
 
 ### Tablas y relaciones
 
@@ -60,8 +61,21 @@ Crear registros:
 
 La base de datos consta de 6 tablas: SERIES, PELÍCULAS, ARTÍCULOS, ALQUILERES, ROLES y USUARIOS.
 
+- La tabla SERIES tiene una relación de "1 TO MANY" (1:N) con la tabla ARTÍCULOS. 
+- La tabla PELÍCULAS tiene una relación de "1 TO MANY" (1:N) con la tabla ARTÍCULOS. 
+- La tabla ARTÍCULOS tiene una relación de "1 TO MANY" (1:N) con la tabla ALQUILERES.
+- La tabla ROLES tiene una relación de "1 TO MANY" (1:N) con la tabla USUARIOS. 
+- La tabla USUARIOS tiene una relación de "1 TO MANY" (1:N) con la tabla ALQUILERES. 
+
+Las relaciones entre las tablas deberían aparecer como en la imagen superior adjunta, siendo las tablas del lado "MANY" las que se traen una FK las PK de la tablas "1". 
+
 
 ### Endpoints
+
+Para poder ejetutar los endpoints se ejecuta la raiz:
+## **localhost:3655
+En caso de no poder conectarse al puerto 3654 declarado en el .env, se conectará al puerto 3610 declarado en el .index. 
+A continuación de esta ruta, se añaden los endpoints con las peticiones GET, POST, PUT y DELETE en el postman o algún servicio similar. 
 
 PELÍCULAS
 - GET /peliculas --> Mostrará el listado con todas las películas.
@@ -79,7 +93,21 @@ SERIES
 - GET /series/proximoepisodio --> Mostrará las series que vayan a emitir un próximo episodio próximamente.
 
 USUARIOS
-ARTÍCULOS
+- GET /usuarios --> Mostrará el listado de todos los usuarios.
+- GET /usuarios/id/:id --> Mostrará un usuario buscando por su Id.
+- POST /usuarios/registroUsuario --> Permitirá el registro de un nuevo usuario en nuestra base de datos y generará un token.
+- POST /usuarios/loginUsuario --> Permitirá el acceso de un usuario ya registrado.
+- PUT /usuarios/actualizaUsuario/:email --> Actualizará los datos de un usuario ya registrado pur su email.
+- DELETE /usuarios/eliminaUsuario/:id --> Eliminará un usuario de nuestra base de datos por su Id. 
+
+ALQUILERES
+- GET /alquileres --> Mostrará el listado de todos los alquileres.
+- GET /alquileres/:id --> Mostrará un alquiler por la Id de un usuario.
+- POST /nuevoAlquiler --> Creará un nuevo alquiler en nuestra base de datos.
+- PUT /actualizaAlquiler/:id --> Actualizará los datos de un alquiler por su Id.
+
+
+
 
 
 
