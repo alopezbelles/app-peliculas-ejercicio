@@ -15,6 +15,8 @@ Ejercicio técnico backend, aplicación alquiler de películas.
  - SEQUELIZE
  - EXPRESS JS
  - POSTMAN
+ - CORS
+ - JWT
 
 ### Descripción general del proyecto 
 
@@ -96,26 +98,18 @@ USUARIOS
 - GET /usuarios --> Mostrará el listado de todos los usuarios.
 - GET /usuarios/id/:id --> Mostrará un usuario buscando por su Id.
 - POST /usuarios/registroUsuario --> Permitirá el registro de un nuevo usuario en nuestra base de datos y generará un token.
+    - Se introduce por body: { "nombre": "nombre, "apellidos": "apellidos", "edad": edad, "email": "email", "contrasena": "contrasena", "direccion": "direccion", "pais": "pais", "telefono": "telefono", "roleIdRol": role Id Role (el rol puede ser 1 usuario, o 2 administrador). 
 - POST /usuarios/loginUsuario --> Permitirá el acceso de un usuario ya registrado.
+    - Se introduce por body: { "nombre": "nombre, "apellidos": "apellidos", "edad": edad, "email": "email", "contrasena": "contrasena", "direccion": "direccion", "pais": "pais", "telefono": "telefono", "roleIdRol": role Id Role (el rol puede ser 1 usuario, o 2 administrador). 
 - PUT /usuarios/actualizaUsuario/:email --> Actualizará los datos de un usuario ya registrado pur su email.
-- DELETE /usuarios/eliminaUsuario/:id --> Eliminará un usuario de nuestra base de datos por su Id. 
+    - Se introduce por body: { "nombre": "nombre, "apellidos": "apellidos", "edad": edad, "email": "email", "contrasena": "contrasena", "direccion": "direccion", "pais": "pais", "telefono": "telefono", "roleIdRol": role Id Role (el rol puede ser 1 usuario, o 2 administrador). 
+- DELETE /usuarios/eliminaUsuario/:id --> Eliminará un usuario de nuestra base de datos por su Id.  
 
 ALQUILERES
 - GET /alquileres --> Mostrará el listado de todos los alquileres.
 - GET /alquileres/:id --> Mostrará un alquiler por la Id de un usuario.
 - POST /nuevoAlquiler --> Creará un nuevo alquiler en nuestra base de datos.
+    - Se introduce por body: { "fechaalquiler": "fechaalquiler, "fechadevolucion": "fechadevolucion", "articuloIdArticulos": "articuloIdArticulos", "usuarioIdUsuario": "usuarioIdUsuario".
 - PUT /actualizaAlquiler/:id --> Actualizará los datos de un alquiler por su Id.
-
-
-
-
-
-
-
-### Estructura del proyecto
-
-
-
-
-🔧 ***El proyecto sigue en desarrollo......¡Disculpad las molestias!***  🔧
+    - Se introduce por body: { "fechaalquiler": "fechaalquiler, "fechadevolucion": "fechadevolucion".
 
