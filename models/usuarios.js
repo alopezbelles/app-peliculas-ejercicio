@@ -43,9 +43,7 @@ module.exports = (sequelize, DataTypes) => {
     contrasena: {
       type: DataTypes.STRING,
       require: true,
-      validate: {
-        len: [6, 45]
-      }
+     
     },
     direccion: DataTypes.STRING,
     pais: DataTypes.STRING,
