@@ -16,6 +16,7 @@ AuthController.signIn = (req, res) =>{
             if (!usuarios) {
                 res.status(404).json({ msg: "Usuario con este correo no encontrado" });
             } else {
+                
                 if (bcrypt.compareSync(contrasena, usuarios.contrasena)) {
                     // Creamos el token
                     let token = jwt.sign({ usuarios: usuarios }, authConfig.secret, {
@@ -43,7 +44,14 @@ AuthController.signIn = (req, res) =>{
 AuthController.signUp = (req, res)=> {
 
         // Encriptamos la contraseña
-        let contrasena = bcrypt.hashSync(req.body.contrasena, Number.parseInt(authConfig.rounds));
+        //añadir una variable que recoja la contrasena del body
+        let contrasena = bcrypt.genSalt(function async(err, salt){
+            bcrypt.hash(micontraseña, salt, async function (err, hash){
+                console.log(hash)
+            })
+        });
+        // let contrasena = bcrypt.hashSync(req.body.contrasena, Number.parseInt(authConfig.rounds));
+
 
         // Crear un usuario
         usuarios.create({
@@ -59,9 +67,9 @@ AuthController.signUp = (req, res)=> {
         }).then(usuarios => {
 
             // Creamos el token
-            let token = jwt.sign({ usuarios: usuarios }, authConfig.secret, {
-                expiresIn: authConfig.expires
-            });
+            // let token = jwt.sign({ usuarios: usuarios }, authConfig.secret, {
+            //     expiresIn: authConfig.expires
+            // });
 
             res.json({
                 usuarios: usuarios,
