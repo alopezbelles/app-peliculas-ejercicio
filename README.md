@@ -100,9 +100,9 @@ USUARIOS
 - POST /usuarios/registroUsuario --> Permitirá el registro de un nuevo usuario en nuestra base de datos y generará un token.
     - Se introduce por body: { "nombre": "nombre, "apellidos": "apellidos", "edad": edad, "email": "email", "contrasena": "contrasena", "direccion": "direccion", "pais": "pais", "telefono": "telefono", "roleIdRol": role Id Role (el rol puede ser 1 usuario, o 2 administrador). 
 - POST /usuarios/loginUsuario --> Permitirá el acceso de un usuario ya registrado.
-    - Se introduce por body: { "nombre": "nombre, "apellidos": "apellidos", "edad": edad, "email": "email", "contrasena": "contrasena", "direccion": "direccion", "pais": "pais", "telefono": "telefono", "roleIdRol": role Id Role (el rol puede ser 1 usuario, o 2 administrador). 
+    - Se introduce por body: { "email": "email", "contrasena": "contrasena",. 
 - PUT /usuarios/actualizaUsuario/:email --> Actualizará los datos de un usuario ya registrado pur su email.
-    - Se introduce por body: { "nombre": "nombre, "apellidos": "apellidos", "edad": edad, "email": "email", "contrasena": "contrasena", "direccion": "direccion", "pais": "pais", "telefono": "telefono", "roleIdRol": role Id Role (el rol puede ser 1 usuario, o 2 administrador). 
+    - Se introduce por body: { "nombre": "nombre, "apellidos": "apellidos", "contrasena": "contrasena". 
 - DELETE /usuarios/eliminaUsuario/:id --> Eliminará un usuario de nuestra base de datos por su Id.  
 
 ALQUILERES
