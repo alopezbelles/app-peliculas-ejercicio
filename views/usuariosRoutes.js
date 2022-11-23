@@ -9,8 +9,8 @@ const {middlewareBearer} = require('../middlewaresAuth/middlewaresAuth')
 
 ///// C R U D   U S U A R I O S /////
 
-router.get("/", UsuariosController.todosUsuarios);
-router.get("/id/:id", UsuariosController.usuarioPorId);
+router.get("/", middlewareBearer, UsuariosController.todosUsuarios);
+router.get("/id/:id", middlewareBearer, UsuariosController.usuarioPorId);
 // router.post("/registroUsuario", UsuariosController.registroUsuario);
 router.post("/registroUsuario", AuthController.signUp);
 router.post("/loginUsuario", AuthController.signIn);
