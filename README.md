@@ -95,21 +95,21 @@ SERIES
 - GET /series/proximoepisodio --> Mostrará las series que vayan a emitir un próximo episodio próximamente.
 
 USUARIOS
-- GET /usuarios --> Mostrará el listado de todos los usuarios.
-- GET /usuarios/id/:id --> Mostrará un usuario buscando por su Id.
+- GET /usuarios --> Mostrará el listado de todos los usuarios (necesita token).
+- GET /usuarios/id/:id --> Mostrará un usuario buscando por su Id (necesita token).
 - POST /usuarios/registroUsuario --> Permitirá el registro de un nuevo usuario en nuestra base de datos y generará un token.
     - Se introduce por body: { "nombre": "nombre, "apellidos": "apellidos", "edad": edad, "email": "email", "contrasena": "contrasena", "direccion": "direccion", "pais": "pais", "telefono": "telefono", "roleIdRol": role Id Role (el rol puede ser 1 usuario, o 2 administrador). 
 - POST /usuarios/loginUsuario --> Permitirá el acceso de un usuario ya registrado.
     - Se introduce por body: { "email": "email", "contrasena": "contrasena",. 
-- PUT /usuarios/actualizaUsuario/:email --> Actualizará los datos de un usuario ya registrado pur su email.
+- PUT /usuarios/actualizaUsuario/:email --> Actualizará los datos de un usuario ya registrado pur su email (necesita token).
     - Se introduce por body: { "nombre": "nombre, "apellidos": "apellidos", "contrasena": "contrasena". 
-- DELETE /usuarios/eliminaUsuario/:id --> Eliminará un usuario de nuestra base de datos por su Id.  
+- DELETE /usuarios/eliminaUsuario/:id --> Eliminará un usuario de nuestra base de datos por su Id (necesita token).  
 
 ALQUILERES
-- GET /alquileres --> Mostrará el listado de todos los alquileres.
-- GET /alquileres/:id --> Mostrará un alquiler por la Id de un usuario.
-- POST /nuevoAlquiler --> Creará un nuevo alquiler en nuestra base de datos.
+- GET /alquileres --> Mostrará el listado de todos los alquileres (necesita token).
+- GET /alquileres/:id --> Mostrará un alquiler por la Id de un usuario (necesita token).
+- POST /nuevoAlquiler --> Creará un nuevo alquiler en nuestra base de datos (necesita token).
     - Se introduce por body: { "fechaalquiler": "fechaalquiler, "fechadevolucion": "fechadevolucion", "articuloIdArticulos": "articuloIdArticulos", "usuarioIdUsuario": "usuarioIdUsuario".
-- PUT /actualizaAlquiler/:id --> Actualizará los datos de un alquiler por su Id.
+- PUT /actualizaAlquiler/:id --> Actualizará los datos de un alquiler por su Id (necesita token).
     - Se introduce por body: { "fechaalquiler": "fechaalquiler, "fechadevolucion": "fechadevolucion".
 
